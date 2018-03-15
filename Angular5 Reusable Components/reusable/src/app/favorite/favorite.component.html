@@ -1,0 +1,9 @@
+<span class="glyphicon"
+   [class.glyphicon-star]="isFavorite"
+   [class.glyphicon-star-empty]="!isFavorite"
+   ></span>
+
+<div style="font-size:2em" (click)="onClick()">
+  <i class="fas fa-star" *ngIf="isFavorite"></i>
+  <i class="far fa-star" *ngIf="!isFavorite"></i>
+</div>
