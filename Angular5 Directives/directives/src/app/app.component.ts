@@ -9,6 +9,12 @@ export class AppComponent {
   canSave = true;
   courses;
   viewMode = 'something';
+  task = {
+    title: 'Review applications',
+    assignee: {
+      name: 'John Smith'
+    }
+  };
 
   @Input() isFavorite: boolean;
   @Output() change = new EventEmitter();
