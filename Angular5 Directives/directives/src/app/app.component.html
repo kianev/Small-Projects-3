@@ -19,6 +19,7 @@
 </div>
 -->
 
+<!--
 <ul class="nav nav-pills">
   <li class="nav-item" >
     <a class="nav-link" (click)="viewMode = 'map'" [class.active]="viewMode === 'map'">Map View</a>
@@ -32,3 +33,11 @@
   <div *ngSwitchCase="'list'">List View Content</div>
   <div *ngSwitchDefault>Otherwise</div>
 </div>
+-->
+<button (click)="onAdd()">Add</button>
+<ul>
+  <li *ngFor="let course of courses; even as isEven">
+   {{ course.name }}  <!--<span *ngIf="isEven">(EVEN)</span>-->
+    <button (click)="onRemove(course)">Remove</button>
+  </li>
+</ul>
