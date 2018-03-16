@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  canSave = true;
   courses;
   viewMode = 'something';
+
+  @Input() isFavorite: boolean;
+  @Output() change = new EventEmitter();
+
+  onClick() {
+    this.isFavorite = !this.isFavorite;
+    // this.change.emit({newValue: this.isFavorite});
+  }
 
 /*  onAdd() {
     this.courses.push({id: 4, name: 'course4'})
@@ -18,7 +27,7 @@ export class AppComponent {
    this.courses.splice(index, 1);
   }*/
 
-  loadCourses() {
+ /* loadCourses() {
     this.courses = [
       {id: 1, name: 'course1'},
       {id: 2, name: 'course2'},
@@ -28,5 +37,5 @@ export class AppComponent {
 
   trackCourse(index, course) {
     return course ? course.id : undefined;
-  }
+  }*/
 }
