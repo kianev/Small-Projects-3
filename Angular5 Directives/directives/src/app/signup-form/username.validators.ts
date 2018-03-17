@@ -12,4 +12,17 @@ export class UsernameValidators {
        return null;
      }
   }
+
+  static shouldBeUnique(control : AbstractControl) : Promise<ValidationErrors | null> {
+     return new Promise((resolve, reject) => {
+       setTimeout(() => {
+         if(control.value === 'banana'){
+           resolve ({shouldBeUnique: true});
+         }else {
+           resolve(null);
+         }
+       }, 1000);
+     });
+  }
+
 }
