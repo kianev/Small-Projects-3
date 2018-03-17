@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
 import {PostService} from "../services/post.service";
 import {AppError} from "../common/app.errors";
 import {NotFoundError} from "../common/not-found.error";
@@ -17,7 +16,7 @@ export class PostsComponent implements OnInit {
   constructor(private postService: PostService) {}
 
   ngOnInit() {
-    this.postService.getPosts()
+    this.postService.getAll()
       .subscribe(response => {
         this.posts = response;
       })
@@ -27,7 +26,7 @@ export class PostsComponent implements OnInit {
     let post = {title: input.value};
     input.value = '';
 
-      this.postService.createPost(post)
+      this.postService.create(post)
         .subscribe(response => {
            this.newPost = response;
            post['id'] = this.newPost.id;
@@ -43,14 +42,14 @@ export class PostsComponent implements OnInit {
   }
 
   updatePost(post) {
-   this.postService.updatePost(post)
+   this.postService.update(post)
       .subscribe(response => {
         console.log(response);
       });
   }
 
   deletePost(post){
-   this.postService.deletePost(post.id)
+   this.postService.delete(post.id)
      .subscribe(response => {
        let index = this.posts.indexOf(post);
        this.posts.splice(index, 1);
