@@ -5,8 +5,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {SignupFormComponent} from "./signup-form/signup-form.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { SignupFormComponent } from "./signup-form/signup-form.component";
+import { PostsComponent } from './posts/posts.component';
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -14,12 +16,14 @@ import {SignupFormComponent} from "./signup-form/signup-form.component";
     AppComponent,
     InputFormatDirective,
     ContactFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
