@@ -1,3 +1,18 @@
+<button (click)="ngOnDestroy()">Go Offline</button>
+
 <ul>
-  <li *ngFor="let course of courses">{{ course }}</li>
+  <li *ngFor="let course of courses$ | async">{{ course }}</li>
 </ul>
+
+<p>
+  {{ course$ | async }}
+</p>
+
+<input type="text" (keyup.enter)="add(course)" #course>
+
+<ul *ngIf="author$ | async as author">
+  <li>{{ author.name }}</li>
+  <li>{{ author.age }}</li>
+  <li>{{ author.courses }}</li>
+</ul>
+
