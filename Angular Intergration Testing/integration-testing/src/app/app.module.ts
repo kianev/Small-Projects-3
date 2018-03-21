@@ -16,8 +16,6 @@ import {HttpClientModule} from "@angular/common/http";
 import { HighlightDirective } from './highlight.directive';
 import { GreeterComponent } from './greeter/greeter.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,

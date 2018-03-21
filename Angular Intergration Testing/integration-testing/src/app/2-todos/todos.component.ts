@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { TodoService } from './todo.service'
 
 @Component({
+  providers: [TodoService],
   selector: 'app-todos',
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
-  todos: any[] = [];
+  todos;
   message;
 
   constructor(private service: TodoService) {}
