@@ -12,7 +12,7 @@ import { routes } from './app.routes';
 import { UsersComponent } from './users/users.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-//import { NavComponent } from './nav/nav.component';
+import { NavComponent } from './nav/nav.component';
 import { HighlightDirective } from './highlight.directive';
 import { GreeterComponent } from './greeter/greeter.component';
 
@@ -25,6 +25,7 @@ import { GreeterComponent } from './greeter/greeter.component';
     VoterComponent,
     UsersComponent,
     GreeterComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
