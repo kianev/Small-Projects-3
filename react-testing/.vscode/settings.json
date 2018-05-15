@@ -1,0 +1,12 @@
+{
+    "git.ignoreLimitWarning": true,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.showSuggestionsAsSnippets": false,
+    "html-css-class-completion.enableEmmetSupport": false,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1500,
+    "editor.tabSize": 2,
+    "editor.fontSize": 16,
+    "editor.wordWrap": "on",
+    "terminal.integrated.fontSize": 16
+}
